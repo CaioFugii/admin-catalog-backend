@@ -1,6 +1,6 @@
 import { Category } from './category';
-import { validate as uuidValidate } from 'uuid';
 import { omit } from 'lodash';
+import UniqueEntityId from '../../../shared/domain/unique-entity-id.vo';
 
 describe('Category Unit tests', () => {
   test('constructor of category', () => {
@@ -67,25 +67,22 @@ describe('Category Unit tests', () => {
     category = new Category({ name: 'Movie' });
     expect(category).toHaveProperty('id');
     expect(category.id).not.toBeNull();
-    expect(uuidValidate(category.id)).toBeTruthy();
+    expect(category.id).toBeInstanceOf(UniqueEntityId);
 
     category = new Category({ name: 'Movie' }, null);
     expect(category).toHaveProperty('id');
     expect(category.id).not.toBeNull();
-    expect(uuidValidate(category.id)).toBeTruthy();
+    expect(category.id).toBeInstanceOf(UniqueEntityId);
 
     category = new Category({ name: 'Movie' }, undefined);
     expect(category).toHaveProperty('id');
     expect(category.id).not.toBeNull();
-    expect(uuidValidate(category.id)).toBeTruthy();
+    expect(category.id).toBeInstanceOf(UniqueEntityId);
 
-    category = new Category(
-      { name: 'Movie' },
-      'fa094389-4e98-4c6d-8292-22a1cbc73dd5',
-    );
+    category = new Category({ name: 'Movie' }, new UniqueEntityId());
     expect(category).toHaveProperty('id');
     expect(category.id).not.toBeNull();
-    expect(uuidValidate(category.id)).toBeTruthy();
+    expect(category.id).toBeInstanceOf(UniqueEntityId);
   });
 
   test('getter of name prop', () => {

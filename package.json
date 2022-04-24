@@ -9,7 +9,7 @@
     "test": "jest"
   },
   "keywords": [],
-  "author": "",
+  "author": "Caio Fugii",
   "license": "ISC",
   "devDependencies": {
     "@swc/core": "^1.2.171",
