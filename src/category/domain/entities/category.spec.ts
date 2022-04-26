@@ -1,6 +1,6 @@
 import { Category } from './category';
 import { omit } from 'lodash';
-import UniqueEntityId from '../../../shared/domain/unique-entity-id.vo';
+import UniqueEntityId from '../../../shared/domain/value-objects/unique-entity-id.vo';
 
 describe('Category Unit tests', () => {
   test('constructor of category', () => {
@@ -67,27 +67,31 @@ describe('Category Unit tests', () => {
     category = new Category({ name: 'Movie' });
     expect(category).toHaveProperty('id');
     expect(category.id).not.toBeNull();
-    expect(category.id).toBeInstanceOf(UniqueEntityId);
+    expect(category.uniqueEntityId).toBeInstanceOf(UniqueEntityId);
 
     category = new Category({ name: 'Movie' }, null);
     expect(category).toHaveProperty('id');
     expect(category.id).not.toBeNull();
-    expect(category.id).toBeInstanceOf(UniqueEntityId);
+    expect(category.uniqueEntityId).toBeInstanceOf(UniqueEntityId);
 
     category = new Category({ name: 'Movie' }, undefined);
     expect(category).toHaveProperty('id');
     expect(category.id).not.toBeNull();
-    expect(category.id).toBeInstanceOf(UniqueEntityId);
+    expect(category.uniqueEntityId).toBeInstanceOf(UniqueEntityId);
 
     category = new Category({ name: 'Movie' }, new UniqueEntityId());
     expect(category).toHaveProperty('id');
     expect(category.id).not.toBeNull();
-    expect(category.id).toBeInstanceOf(UniqueEntityId);
+    expect(category.uniqueEntityId).toBeInstanceOf(UniqueEntityId);
   });
 
-  test('getter of name prop', () => {
-    const category = new Category({ name: 'Movie' });
+  test('getter and setter of name prop', () => {
+    let category = new Category({ name: 'Movie' });
     expect(category.name).toBe('Movie');
+
+    category = new Category({ name: 'Movie' });
+    category['name'] = 'Cartoon';
+    expect(category.name).toBe('Cartoon');
   });
 
   test('getter and setter of description prop', () => {
@@ -133,5 +137,34 @@ describe('Category Unit tests', () => {
     let created_at = new Date();
     category = new Category({ name: 'Movie', created_at });
     expect(category.created_at).toBe(created_at);
+  });
+
+  test('update method', () => {
+    const category = new Category({
+      name: 'Movie',
+      description: 'Nice description',
+    });
+    category.update('Cartoon', 'Ugly description');
+    expect(category.name).toBe('Cartoon');
+    expect(category.description).toBe('Ugly description');
+  });
+
+  test('activate method', () => {
+    const category = new Category({
+      name: 'Movie',
+      description: 'Nice description',
+      is_active: false,
+    });
+    category.activate();
+    expect(category.is_active).toBeTruthy();
+  });
+
+  test('deactivate method', () => {
+    const category = new Category({
+      name: 'Movie',
+      description: 'Nice description',
+    });
+    category.deactivate();
+    expect(category.is_active).toBeFalsy();
   });
 });
