@@ -2,7 +2,7 @@ import { Category } from '../../../domain/entities/category';
 import { CategoryInMemoryRepository } from '../../../../category/infra/repository/category-in-memory.repository';
 import GetCategoryUseCase from '../get-category.use-case';
 
-describe('GetCategoryUseCase', () => {
+describe('GetCategoryUseCase Unit Tests', () => {
   let useCase: GetCategoryUseCase;
   let repository: CategoryInMemoryRepository;
 

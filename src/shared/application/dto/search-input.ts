@@ -1,4 +1,4 @@
-import { SortDirection } from '../../repository/repository-contracts.interface';
+import { SortDirection } from '../../repository/repository-contracts';
 
 export type SearchInputDto<Filter = string> = {
   page?: number;

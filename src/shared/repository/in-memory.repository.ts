@@ -6,7 +6,7 @@ import {
   SearchableRepositoryInterface,
   SearchParams,
   SearchResult,
-} from './repository-contracts.interface';
+} from './repository-contracts';
 
 export abstract class InMemoryRepository<E extends Entity>
   implements RepositoryInterface<E>

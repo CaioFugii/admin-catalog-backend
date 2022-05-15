@@ -1,10 +1,10 @@
 import {
   PaginationOutputDto,
   PaginationOutputMapper,
-} from 'shared/application/dto/pagination-output';
-import { SearchInputDto } from 'shared/application/dto/search-input';
-import UseCase from 'shared/application/use-case';
-import CategoryRepository from '../../domain/repository/category.repository';
+} from '../../../shared/application/dto/pagination-output';
+import { SearchInputDto } from '../../../shared/application/dto/search-input';
+import UseCase from '../../../shared/application/use-case';
+import { CategoryRepository } from '../../domain/repository/category.repository';
 import {
   CategoryOutput,
   CategoryOutputMapper,
@@ -27,7 +27,7 @@ export default class ListCategoriesUseCase implements UseCase<Input, Output> {
     const items = searchResult.items.map(category =>
       CategoryOutputMapper.toOutput(category),
     );
-    const pagination = PaginationOutputMapper.toPaginationOutput(searchResult);
+    const pagination = PaginationOutputMapper.toOutput(searchResult);
     return {
       items,
       ...pagination,

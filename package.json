@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "ts-node",
     "tsc": "tsc",
-    "test": "jest"
+    "tsc:check": "npm run tsc -- --noEmit",
+    "clean:tsc": "rm tsconfig.tsbuildinfo",
+    "test": "jest",
+    "test:cov": "npm run test -- --coverage"
   },
   "keywords": [],
   "author": "Caio Fugii",
