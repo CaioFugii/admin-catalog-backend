@@ -1,6 +1,6 @@
-import Entity from 'shared/domain/entities/entity';
-import UniqueEntityId from 'shared/domain/value-objects/unique-entity-id.vo';
-import NotFoundError from '../errors/not-found.error';
+import Entity from '#shared/domain/entities/entity';
+import UniqueEntityId from '#shared/domain/value-objects/unique-entity-id.vo';
+import NotFoundError from '#shared/errors/not-found.error';
 import {
   RepositoryInterface,
   SearchableRepositoryInterface,

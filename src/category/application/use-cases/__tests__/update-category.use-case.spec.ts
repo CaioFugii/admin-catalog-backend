@@ -1,7 +1,7 @@
-import NotFoundError from '../../../../shared/errors/not-found.error';
-import { CategoryInMemoryRepository } from '../../../../category/infra/repository/category-in-memory.repository';
+import NotFoundError from '#shared/errors/not-found.error';
+import { CategoryInMemoryRepository } from '#category/infra/repository/category-in-memory.repository';
 import UpdateCategoryUseCase from '../update-category.use-case';
-import { Category } from '../../../domain/entities/category';
+import { Category } from '#category/domain/entities/category';
 
 describe('UpdateCategoryUseCase Unit Tests', () => {
   let useCase: UpdateCategoryUseCase;

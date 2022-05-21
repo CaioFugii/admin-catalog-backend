@@ -1,9 +1,9 @@
-import UseCase from 'shared/application/use-case';
-import { CategoryRepository } from '../../domain/repository/category.repository';
+import UseCase from '#shared/application/use-case';
+import { CategoryRepository } from '#category/domain/repository/category.repository';
 import {
   CategoryOutput,
   CategoryOutputMapper,
-} from '../dto/category-output.dto';
+} from '#category/application/dto/category-output.dto';
 
 export type Input = {
   id: string;

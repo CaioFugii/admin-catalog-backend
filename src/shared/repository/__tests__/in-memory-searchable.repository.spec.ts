@@ -1,5 +1,4 @@
-import { result } from 'lodash';
-import Entity from '../../domain/entities/entity';
+import Entity from '#shared/domain/entities/entity';
 import { InMemorySearchableRepository } from '../in-memory.repository';
 import { SearchParams, SearchResult } from '../repository-contracts';
 

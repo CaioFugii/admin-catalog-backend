@@ -1,4 +1,4 @@
-import { SearchResult } from '../../repository/repository-contracts';
+import { SearchResult } from '#shared/repository/repository-contracts';
 import { PaginationOutputMapper } from './pagination-output';
 
 describe('PaginationOutputMapper Unit Tests', () => {

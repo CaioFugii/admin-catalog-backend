@@ -1,10 +1,10 @@
 import {
   PaginationOutputDto,
   PaginationOutputMapper,
-} from '../../../shared/application/dto/pagination-output';
-import { SearchInputDto } from '../../../shared/application/dto/search-input';
-import UseCase from '../../../shared/application/use-case';
-import { CategoryRepository } from '../../domain/repository/category.repository';
+} from '#shared/application/dto/pagination-output';
+import { SearchInputDto } from '#shared/application/dto/search-input';
+import UseCase from '#shared/application/use-case';
+import { CategoryRepository } from '#category/domain/repository/category.repository';
 import {
   CategoryOutput,
   CategoryOutputMapper,

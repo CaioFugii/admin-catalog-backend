@@ -1,5 +1,5 @@
-import Entity from 'shared/domain/entities/entity';
-import UniqueEntityId from 'shared/domain/value-objects/unique-entity-id.vo';
+import Entity from '#shared/domain/entities/entity';
+import UniqueEntityId from '#shared/domain/value-objects/unique-entity-id.vo';
 
 export interface RepositoryInterface<E extends Entity> {
   insert(entity: E): Promise<void>;

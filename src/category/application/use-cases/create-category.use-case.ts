@@ -1,10 +1,10 @@
-import { CategoryRepository } from '../../domain/repository/category.repository';
-import { Category } from '../../domain/entities/category';
+import { CategoryRepository } from '#category/domain/repository/category.repository';
+import { Category } from '#category/domain/entities/category';
 import {
   CategoryOutput,
   CategoryOutputMapper,
-} from '../dto/category-output.dto';
-import UseCase from 'shared/application/use-case';
+} from '#category/application/dto/category-output.dto';
+import UseCase from '#shared/application/use-case';
 
 export type Input = {
   name: string;
